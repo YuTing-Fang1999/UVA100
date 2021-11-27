@@ -1,3 +1,5 @@
+// 101 - The Blocks Problem
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -95,20 +97,20 @@ int main(){
 			
 			if(cmd1=="move"){
 				recover_block(a);
-				if(cmd2=="onto"){ //¦b±Na·h¨ìb¤W¤§«e¡A¥ı±Na©Mb¤Wªº¿n¤ì©ñ¦^­ì¨Óªº¦ì¸m
+				if(cmd2=="onto"){ //åœ¨å°‡aæ¬åˆ°bä¸Šä¹‹å‰ï¼Œå…ˆå°‡aå’Œbä¸Šçš„ç©æœ¨æ”¾å›åŸä¾†çš„ä½ç½®
 					recover_block(b);
 					put_block(a,b);
 				}
-				else{ //over ¦b±Na·h¨ìb©Ò¦bªº¨º°ï¿n¤ì¤§¤W¤§«e¡A¥ı±Na¤Wªº¿n¤ì©ñ¦^­ì¨Óªº¦ìÓ_¡]b©Ò¦bªº¨º°ï¿n¤ì¤£°Ê¡^
+				else{ //over åœ¨å°‡aæ¬åˆ°bæ‰€åœ¨çš„é‚£å †ç©æœ¨ä¹‹ä¸Šä¹‹å‰ï¼Œå…ˆå°‡aä¸Šçš„ç©æœ¨æ”¾å›åŸä¾†çš„ä½ç½ï¼ˆbæ‰€åœ¨çš„é‚£å †ç©æœ¨ä¸å‹•ï¼‰
 					put_block(a,b);
 				}
 			}
 			else if(cmd1=="pile"){
-				if(cmd2=="onto"){ //±Na¥»¨­©M¨ä¤Wªº¿n¤ì¤@°_©ñ¨ìb¤W¡A¦b·h¤§«eb¤W¤èªº¿n¤ì©ñ¦^­ì¦ì
+				if(cmd2=="onto"){ //å°‡aæœ¬èº«å’Œå…¶ä¸Šçš„ç©æœ¨ä¸€èµ·æ”¾åˆ°bä¸Šï¼Œåœ¨æ¬ä¹‹å‰bä¸Šæ–¹çš„ç©æœ¨æ”¾å›åŸä½
 					recover_block(b);
 					put_block(a,b);
 				}
-				else{ //±Na¥»¨­©M¨ä¤Wªº¿n¤ì¤@°_·h¨ì¨ìb©Ò¦bªº¨º°ï¿n¤ì¤§¤W
+				else{ //å°‡aæœ¬èº«å’Œå…¶ä¸Šçš„ç©æœ¨ä¸€èµ·æ¬åˆ°åˆ°bæ‰€åœ¨çš„é‚£å †ç©æœ¨ä¹‹ä¸Š
 					put_block(a,b);
 				}
 			}
