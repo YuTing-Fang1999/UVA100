@@ -1,3 +1,5 @@
+// 100 - The 3n + 1 problem
+
 #include <stdio.h>
 #include <iostream>
 using namespace std;
