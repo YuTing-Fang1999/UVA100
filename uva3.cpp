@@ -1,3 +1,5 @@
+// 102 - Ecological Bin Packing
+
 #include <iostream>
 #define B 0
 #define G 1
@@ -58,10 +60,10 @@ int main(){
 		for(int i=1;i<9;++i){
 			cin>>arr[i];
 		}
-		//­pºâ¥ş³¡bottleªº¼Æ¶q 
+		//è¨ˆç®—å…¨éƒ¨bottleçš„æ•¸é‡ 
 		sum = bottle_sum();
 		
-		//§ä«O¯d²~¤l¼Æ¶q³Ì¦hªº±Æ¦C (¥Nªí»İ·h²¾ªº²~¤l³Ì¤Ö) 
+		//æ‰¾ä¿ç•™ç“¶å­æ•¸é‡æœ€å¤šçš„æ’åˆ— (ä»£è¡¨éœ€æ¬ç§»çš„ç“¶å­æœ€å°‘) 
 		curNum=0; mark=0; num=0;
 		for(int i=0;i<6;++i){
 			num = reserve_num(colorSet[i][0],colorSet[i][1],colorSet[i][2]);
@@ -71,7 +73,7 @@ int main(){
 			}
 		}
 		
-		//·h²¾¼Æ¶q = ¥ş³¡²~¤l - «O¯d¼Æ¶q 
+		//æ¬ç§»æ•¸é‡ = å…¨éƒ¨ç“¶å­ - ä¿ç•™æ•¸é‡ 
 		print_ans(mark,sum-curNum);
 		
 	}
