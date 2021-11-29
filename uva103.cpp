@@ -18,15 +18,15 @@ struct Box{
 bool box_compare(Box &a, Box &b){
 	for(int i=0;i<a.dim.size();++i){
 		if(a.dim[i] > b.dim[i]) return false;
-		if(a.dim[i] < b.dim[i]) return true; //¥æ´« 
+		if(a.dim[i] < b.dim[i]) return true; //äº¤æ› 
 	}
 	return true;
 }
 
-//a¬O§_¥i¥]¦bb¸Ì 
+//aæ˜¯å¦å¯åŒ…åœ¨bè£¡ 
 bool is_contain(Box &a, Box &b){
 	for(int i=0;i<a.dim.size();++i){
-		if(a.dim[i] >= b.dim[i]) return false; //µ¥©ó¤]¤£¦æ!!!°Ú°Ú°Ú­ì¨Óbug¦b³o¸Ì 
+		if(a.dim[i] >= b.dim[i]) return false; //ç­‰æ–¼ä¹Ÿä¸è¡Œ!!!å•Šå•Šå•ŠåŸä¾†bugåœ¨é€™è£¡ 
 	}
 	return true;
 }
@@ -47,12 +47,12 @@ int main(){
 			for(int j=0;j<n;++j){
 				cin>>b.dim[j];
 			}
-			sort(b.dim.begin(),b.dim.end()); //¹w³]¥Ñ¤p±Æ¨ì¤j 
+			sort(b.dim.begin(),b.dim.end()); //é è¨­ç”±å°æ’åˆ°å¤§ 
 			boxes.push_back(b);
 		}
 		sort(boxes.begin(),boxes.end(),box_compare);
 		
-		//ÀË¬d¬O§_±Æ§Ç¥¿½T 
+		//æª¢æŸ¥æ˜¯å¦æ’åºæ­£ç¢º 
 //		for(int i=0;i<boxes.size();++i){
 //			cout<<i<<"   ";
 //			for(int j=0;j<n;++j){
@@ -61,15 +61,15 @@ int main(){
 //			cout<<endl;
 //		}
 		
-		//§ä¥X³Ìªø§Ç¦C
+		//æ‰¾å‡ºæœ€é•·åºåˆ—
 		vector<int> boxMaxLen(k,1), preBox(k,-1);
-		int maxLen = 1, lastBox = 0; //¶W¯Åbug!¤£¯à³]¬°-1!!¤£µM¦³¨Ç´ú¸êprint¤£¥X¨Ó 
+		int maxLen = 1, lastBox = 0; //è¶…ç´šbug!ä¸èƒ½è¨­ç‚º-1!!ä¸ç„¶æœ‰äº›æ¸¬è³‡printä¸å‡ºä¾† 
 		for(int i=0;i<k;++i){
 			for(int j=i+1;j<k;++j){
-				if(is_contain(boxes[i],boxes[j])){//¦pªGi¥i³Q¥]¦bj¸Ì 
-//					cout<<i<<"¥i³Q¥]¦b"<<j<<"¸Ì"<<endl; 
-					if(boxMaxLen[i]+1 > boxMaxLen[j]){//¦pªGj¥]¦íi«áªø«×ÅÜªø´N§ó·s 
-//						cout<<"§ó·s"<<j<<"ªºªø«×"<<endl; 
+				if(is_contain(boxes[i],boxes[j])){//å¦‚æœiå¯è¢«åŒ…åœ¨jè£¡ 
+//					cout<<i<<"å¯è¢«åŒ…åœ¨"<<j<<"è£¡"<<endl; 
+					if(boxMaxLen[i]+1 > boxMaxLen[j]){//å¦‚æœjåŒ…ä½iå¾Œé•·åº¦è®Šé•·å°±æ›´æ–° 
+//						cout<<"æ›´æ–°"<<j<<"çš„é•·åº¦"<<endl; 
 						boxMaxLen[j]=boxMaxLen[i]+1;
 						preBox[j] = i;
 						if(boxMaxLen[j] > maxLen){
@@ -83,7 +83,7 @@ int main(){
 		}
 		
 		cout<<maxLen<<endl;
-		print_ans(boxes, preBox, lastBox); //§Q¥Î»¼°j¤ÏÂà¿é¥X¶¶§Ç 
+		print_ans(boxes, preBox, lastBox); //åˆ©ç”¨éè¿´åè½‰è¼¸å‡ºé †åº 
 		cout<<endl;
 
 		boxes.clear();
