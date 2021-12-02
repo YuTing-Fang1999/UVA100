@@ -7,7 +7,7 @@ int main()
    int n;
    cin >> n;
 
-   //¿é¤Jµª®×
+   //è¼¸å…¥ç­”æ¡ˆ
    int num;
    int tea_ans[25];
    for (int i = 1; i <= n; ++i)
@@ -16,7 +16,7 @@ int main()
       tea_ans[num] = i;
    }
 
-   //¿é¤J¾Ç¥Íªº¦^µª
+   //è¼¸å…¥å­¸ç”Ÿçš„å›žç­”
    int stu_ans[25];
    while (cin >> num)
    {
@@ -27,7 +27,7 @@ int main()
          stu_ans[num] = i;
       }
 
-      //¥ÎLCSºâansªº¤À¼Æ
+      //ç”¨LCSç®—ansçš„åˆ†æ•¸
       int LCS[25][25] = {0};
       int maxScore = 0;
       for (int i = 1; i <= n; ++i)
@@ -39,7 +39,7 @@ int main()
                LCS[i][j] = LCS[i-1][j-1]+1;
             }else{
             	LCS[i][j] = max(LCS[i-1][j],LCS[i][j-1]);
-			}
+	    }
          }
       }
 
