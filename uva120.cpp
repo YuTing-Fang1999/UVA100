@@ -3,48 +3,57 @@
 #include <sstream>
 using namespace std;
 
-
-void flip( int pancakes[], int totalPancakes, int index ){
-  for( int i = 0 ; i <= index / 2 ; ++i ){
-    swap( pancakes[i], pancakes[index-i] );
-  }
-  printf("%d ",totalPancakes - index);
+void flip(int pancakes[], int totalPancakes, int index)
+{
+	for (int i = 0; i <= index / 2; ++i)
+	{
+		swap(pancakes[i], pancakes[index - i]);
+	}
+	printf("%d ", totalPancakes - index);
 }
 
-int main(){
+int main()
+{
 	string input_str;
-	while(getline(cin,input_str)){
-		cout<<input_str<<endl;
+	while (getline(cin, input_str))
+	{
+		cout << input_str << endl;
 		stringstream ss(input_str);
-		
+
 		//init
 		int pancakes[35] = {0};
-	    int totalPancakes = 0;
-	    while( ss >> pancakes[totalPancakes] ){
-	      ++totalPancakes;
-	    }
-	    
-	    //start compute	
-	    int indexOfMax = 0;
-	    //³]©w§ä³Ì¤j­Èªº½d³ò
-	    for(int i = totalPancakes-1 ; i > 0  ; --i ){  
-	    	int indexOfMax = 0;
-	    	//§ä¦¹½d³ò¤ºªº³Ì¤j­È
-	    	for(int j=0;j<=i;++j){
-	    		if(pancakes[indexOfMax] < pancakes[j])  indexOfMax=j;
+		int totalPancakes = 0;
+		while (ss >> pancakes[totalPancakes])
+		{
+			++totalPancakes;
+		}
+
+		//start compute
+		int indexOfMax = 0;
+		//è¨­å®šæ‰¾æœ€å¤§å€¼çš„ç¯„åœ
+		for (int i = totalPancakes - 1; i > 0; --i)
+		{
+			int indexOfMax = 0;
+			//æ‰¾æ­¤ç¯„åœå…§çš„æœ€å¤§å€¼
+			for (int j = 0; j <= i; ++j)
+			{
+				if (pancakes[indexOfMax] < pancakes[j])
+					indexOfMax = j;
 			}
-			
-			//indexOfMax ¤£¦b³Ì¥kÃä 
-			if(indexOfMax < i){ 
-				//flip indexOfMax to ³Ì¥ªÃä 
-				if(indexOfMax != 0){
+
+			//indexOfMax ä¸åœ¨æœ€å³é‚Š
+			if (indexOfMax < i)
+			{
+				//flip indexOfMax to æœ€å·¦é‚Š
+				if (indexOfMax != 0)
+				{
 					flip(pancakes, totalPancakes, indexOfMax);
 				}
-				//flip indexOfMax to ³Ì¥kÃä 
+				//flip indexOfMax to æœ€å³é‚Š
 				flip(pancakes, totalPancakes, i);
 			}
 		}
-		
+
 		printf("0\n");
 	}
 }
