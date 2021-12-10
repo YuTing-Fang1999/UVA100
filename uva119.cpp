@@ -11,7 +11,7 @@ int main()
    while (cin >> n)
    {
       //The output for each group should be separated from other groups by a blank line
-      //­n¦b³o¸Ì´«¦æ¡A¯uªº¬O¦³°÷©Çder~
+      //å› ç‚ºæœ€å¾Œä¸€è¡Œä¸èƒ½æ›è¡Œæ‰€ä»¥è¦åœ¨é€™è£¡åˆ¤æ–·ï¼ŒçœŸçš„æ˜¯è¶…éº»ç…©der~
       if (hasPrinted)
          printf("\n");
 
