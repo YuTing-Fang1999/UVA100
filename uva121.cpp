@@ -10,7 +10,7 @@ int grid(float w, float h)
 int skew(float w, float h)
 {
     int row = (h >= 1) + (int)((h - 1) / (sqrt(3) / 2));
-    //¦pªG (w - (int)w) < 0.5 °¸¼Æ¼h·|¤Ö1
+    //å¦‚æœ (w - (int)w) < 0.5 å¶æ•¸å±¤æœƒå°‘1
     return ((int)w * row) - (int)(row / 2) * ((w - (int)w) < 0.5);
 }
 int main()
