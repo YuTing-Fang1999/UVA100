@@ -33,7 +33,7 @@ int main()
 		//設定找最大值的範圍
 		for (int i = totalPancakes - 1; i > 0; --i)
 		{
-			int indexOfMax = 0;
+			indexOfMax = 0;
 			//找此範圍內的最大值
 			for (int j = 0; j <= i; ++j)
 			{
